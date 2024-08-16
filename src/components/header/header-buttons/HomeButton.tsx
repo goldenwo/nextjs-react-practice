@@ -6,7 +6,7 @@ interface HomeButtonProps {
 
 const HomeButton: React.FC<HomeButtonProps> = ({ onClick }) => {
   return (
-    <Button variant="contained" onClick={onClick}>
+    <Button variant="contained" color="primary" onClick={onClick}>
       Home
     </Button>
   );

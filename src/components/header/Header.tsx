@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         >
           <HomeButton onClick={() => routeToPage('/')} />
           {pages.map((page) => (
-            <Button key={page} variant="outlined" onClick={() => routeToPage(page)}>
+            <Button key={page} variant="text" color="primary" onClick={() => routeToPage(page)}>
               {page}
             </Button>
           ))}
