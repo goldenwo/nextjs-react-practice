@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Adjust the padding-top to match the height of your AppBar */
+.main-content {
+  padding-top: 48px; /* Adjust this value if your AppBar height is different */
+}

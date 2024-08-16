@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
+import HomeButton from '@/components/header/header-buttons/HomeButton';
+import Header from '@/components/header/Header';
 const inter = Inter({ subsets: ['latin'] });
 
 class ListNode {
@@ -87,21 +89,24 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col justify-center items-center h-screen">
-      <h1 className="text-black">Add Two Numbers</h1>
-      <h2 className="text-black">Data Sets</h2>
-      <div className="flex flex-row space-x-4">
-        <p>[{convertListToArray(l1).toLocaleString()}]</p>
-        <p>[{convertListToArray(l2).toLocaleString()}]</p>
+    <main className="main-content h-screen">
+      <Header />
+      <div className="flex flex-col justify-center items-center h-full">
+        <h1 className="text-black">Add Two Numbers</h1>
+        <h2 className="text-black">Data Sets</h2>
+        <div className="flex flex-row space-x-4">
+          <p>[{convertListToArray(l1).toLocaleString()}]</p>
+          <p>[{convertListToArray(l2).toLocaleString()}]</p>
+        </div>
+        <Button className="m" variant="contained" onClick={rotateDataSet}>
+          Next data set
+        </Button>
+        <ul className="flex flex-row justify-between items-center space-x-2">
+          {resultArray.map((val, index) => (
+            <li key={index}>{val}</li>
+          ))}
+        </ul>
       </div>
-      <Button className="m" variant="contained" onClick={rotateDataSet}>
-        Next data set
-      </Button>
-      <ul className="flex flex-row justify-between items-center space-x-2">
-        {resultArray.map((val, index) => (
-          <li key={index}>{val}</li>
-        ))}
-      </ul>
     </main>
   );
 }
